@@ -1,4 +1,19 @@
 {
   "description": "Tracks news headlines to prevent duplicates. Updated automatically by the automation.",
-  "news_archive": {}
+  "news_archive": {
+    "2026-09-18": [
+      {
+        "headline": "Bank of Japan Hikes Rates to 31-Year High",
+        "hash": "793b446fa1f8c21905bebe3ae61e2623110bf92c400a0c077ff2429363882f98",
+        "posted_at": "2026-09-18T04:25:17Z",
+        "source": "CNBC"
+      },
+      {
+        "headline": "Congress Sends Trump 100% Russia Oil Tariff Bill",
+        "hash": "71041d39999c1724a7342a32eef6e702d7928763bb434dac7187875702f89752",
+        "posted_at": "2026-09-18T04:25:17Z",
+        "source": "CNBC / NBC News"
+      }
+    ]
+  }
 }
