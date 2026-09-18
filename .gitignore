@@ -1,0 +1,27 @@
+# System files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# Keep data files
+!news-archive/
+!instagram-prompts/
+!tracking/
