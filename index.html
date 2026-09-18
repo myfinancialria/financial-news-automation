@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Financial News - Automation Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid #00d4ff;
+            border-radius: 20px;
+            color: #00d4ff;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 1.3em;
+        }
+
+        .news-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid #00d4ff;
+        }
+
+        .news-headline {
+            font-weight: 600;
+            font-size: 1.05em;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .news-source {
+            color: #888;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+        }
+
+        .news-summary {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .news-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85em;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .badge-bullish {
+            background: rgba(76, 175, 80, 0.2);
+            color: #76d776;
+            border: 1px solid #76d776;
+        }
+
+        .badge-bearish {
+            background: rgba(244, 67, 54, 0.2);
+            color: #ff7b7b;
+            border: 1px solid #ff7b7b;
+        }
+
+        .badge-neutral {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffb366;
+            border: 1px solid #ffb366;
+        }
+
+        .badge-high {
+            background: rgba(244, 67, 54, 0.2);
+            color: #ff6b6b;
+        }
+
+        .badge-medium {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffb366;
+        }
+
+        .ig-prompt {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid #ff00ff;
+        }
+
+        .ig-topic {
+            font-weight: 600;
+            color: #ff00ff;
+            margin-bottom: 8px;
+        }
+
+        .ig-details {
+            color: #ccc;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .time-slot {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 3px solid #00d4ff;
+        }
+
+        .time-slot h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        .repo-link {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .repo-link:hover {
+            color: #00e6ff;
+            text-decoration: underline;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .empty-state p {
+            margin-bottom: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📰 Daily Financial News</h1>
+            <p class="subtitle">Automated Daily Updates - 4x Per Day</p>
+            <div class="status">🟢 Live Automation Running</div>
+        </header>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Daily Updates</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8</div>
+                <div class="stat-label">News Stories</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">8</div>
+                <div class="stat-label">IG Prompts</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">60s</div>
+                <div class="stat-label">Read Time</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- News Section -->
+            <div>
+                <div class="card">
+                    <h2><span class="icon">📊</span> Latest News</h2>
+                    <div id="news-content" class="loading">Loading today's news...</div>
+                </div>
+            </div>
+
+            <!-- Instagram Prompts Section -->
+            <div>
+                <div class="card">
+                    <h2><span class="icon">🎨</span> Instagram Prompts</h2>
+                    <div id="ig-content" class="loading">Loading image prompts...</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>📍 Updates run automatically at <strong>8 AM, 1 PM, 5 PM, 8 PM (IST)</strong></p>
+            <p style="margin-top: 15px; color: #555; font-size: 0.9em;">
+                Powered by <a href="https://github.com/myfinancialria/financial-news-automation" class="repo-link" target="_blank">Financial News Automation</a> •
+                <a href="https://claude.ai/code" class="repo-link" target="_blank">Claude Code</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Fetch and display news from GitHub
+        async function loadContent() {
+            try {
+                const today = new Date().toISOString().split('T')[0];
+
+                // Try to fetch today's news
+                const newsUrl = `https://raw.githubusercontent.com/myfinancialria/financial-news-automation/main/news-archive/${today}.md`;
+                const igUrl = `https://raw.githubusercontent.com/myfinancialria/financial-news-automation/main/instagram-prompts/${today}.md`;
+
+                const [newsResponse, igResponse] = await Promise.all([
+                    fetch(newsUrl).catch(() => ({ ok: false })),
+                    fetch(igUrl).catch(() => ({ ok: false }))
+                ]);
+
+                if (newsResponse.ok) {
+                    const newsData = await newsResponse.text();
+                    displayNews(newsData);
+                } else {
+                    document.getElementById('news-content').innerHTML =
+                        '<div class="empty-state"><p>📅 No news yet for today</p><p style="color: #666; font-size: 0.9em;">First update comes at 8 AM IST</p></div>';
+                }
+
+                if (igResponse.ok) {
+                    const igData = await igResponse.text();
+                    displayIGPrompts(igData);
+                } else {
+                    document.getElementById('ig-content').innerHTML =
+                        '<div class="empty-state"><p>🎨 Instagram prompts coming soon</p><p style="color: #666; font-size: 0.9em;">Check back after 8 AM IST</p></div>';
+                }
+            } catch (error) {
+                console.error('Error loading content:', error);
+                document.getElementById('news-content').innerHTML =
+                    '<div class="empty-state"><p>⚠️ Unable to load news</p></div>';
+                document.getElementById('ig-content').innerHTML =
+                    '<div class="empty-state"><p>⚠️ Unable to load prompts</p></div>';
+            }
+        }
+
+        function displayNews(markdown) {
+            const newsDiv = document.getElementById('news-content');
+            newsDiv.innerHTML = '';
+
+            // Simple markdown parsing for news items
+            const lines = markdown.split('\n');
+            let currentItem = null;
+
+            for (let line of lines) {
+                if (line.startsWith('### Trending News')) {
+                    if (currentItem) {
+                        newsDiv.appendChild(createNewsElement(currentItem));
+                    }
+                    currentItem = {};
+                } else if (line.startsWith('- **Source**:')) {
+                    if (currentItem) currentItem.source = line.replace('- **Source**: ', '').trim();
+                } else if (line.startsWith('- **Summary**:')) {
+                    if (currentItem) currentItem.summary = line.replace('- **Summary**: ', '').trim();
+                } else if (line.startsWith('- **Sentiment**:')) {
+                    if (currentItem) currentItem.sentiment = line.replace('- **Sentiment**: ', '').trim();
+                } else if (line.startsWith('- **Impact Level**:')) {
+                    if (currentItem) currentItem.impact = line.replace('- **Impact Level**: ', '').trim();
+                } else if (line.startsWith('### Trending News')) {
+                    const headline = line.replace('### Trending News #', '').split(':')[1];
+                    if (currentItem) newsDiv.appendChild(createNewsElement(currentItem));
+                    currentItem = { headline: headline ? headline.trim() : 'Breaking News' };
+                }
+            }
+
+            if (currentItem && currentItem.headline) {
+                newsDiv.appendChild(createNewsElement(currentItem));
+            }
+
+            // If no items found, show sample
+            if (newsDiv.children.length === 0) {
+                newsDiv.innerHTML = `
+                    <div class="empty-state">
+                        <p>📰 Waiting for first update...</p>
+                        <p style="color: #666; font-size: 0.9em;">Automation runs every 3 hours</p>
+                    </div>
+                `;
+            }
+        }
+
+        function createNewsElement(item) {
+            const div = document.createElement('div');
+            div.className = 'news-item';
+
+            const sentiment = item.sentiment || 'Neutral';
+            const sentimentClass =
+                sentiment.includes('Bullish') ? 'badge-bullish' :
+                sentiment.includes('Bearish') ? 'badge-bearish' : 'badge-neutral';
+
+            const impact = item.impact || 'Medium';
+            const impactClass =
+                impact.includes('High') ? 'badge-high' :
+                impact.includes('Low') ? 'badge-medium' : 'badge-medium';
+
+            div.innerHTML = `
+                <div class="news-headline">${item.headline || 'Breaking News'}</div>
+                <div class="news-source">📍 ${item.source || 'News Source'}</div>
+                <div class="news-summary">${item.summary || 'Latest update...'}</div>
+                <div class="news-meta">
+                    <span class="badge ${sentimentClass}">${sentiment}</span>
+                    <span class="badge ${impactClass}">Impact: ${impact}</span>
+                </div>
+            `;
+            return div;
+        }
+
+        function displayIGPrompts(markdown) {
+            const igDiv = document.getElementById('ig-content');
+            igDiv.innerHTML = '';
+
+            const lines = markdown.split('\n');
+            let currentPrompt = null;
+
+            for (let line of lines) {
+                if (line.startsWith('**Topic**:')) {
+                    if (currentPrompt) {
+                        igDiv.appendChild(createIGElement(currentPrompt));
+                    }
+                    currentPrompt = { topic: line.replace('**Topic**: ', '').trim() };
+                } else if (line.startsWith('**Style**:') && currentPrompt) {
+                    currentPrompt.style = line.replace('**Style**: ', '').trim();
+                } else if (line.startsWith('**Colors**:') && currentPrompt) {
+                    currentPrompt.colors = line.replace('**Colors**: ', '').trim();
+                } else if (line.startsWith('**Main Text**:') && currentPrompt) {
+                    currentPrompt.text = line.replace('**Main Text**: ', '').replace(/"/g, '').trim();
+                }
+            }
+
+            if (currentPrompt && currentPrompt.topic) {
+                igDiv.appendChild(createIGElement(currentPrompt));
+            }
+
+            if (igDiv.children.length === 0) {
+                igDiv.innerHTML = `
+                    <div class="empty-state">
+                        <p>🎨 IG prompts coming soon...</p>
+                        <p style="color: #666; font-size: 0.9em;">First update at 8 AM IST</p>
+                    </div>
+                `;
+            }
+        }
+
+        function createIGElement(prompt) {
+            const div = document.createElement('div');
+            div.className = 'ig-prompt';
+            div.innerHTML = `
+                <div class="ig-topic">📱 ${prompt.topic || 'Image Prompt'}</div>
+                <div class="ig-details">
+                    ${prompt.style ? `<div><strong>Style:</strong> ${prompt.style}</div>` : ''}
+                    ${prompt.colors ? `<div><strong>Colors:</strong> ${prompt.colors}</div>` : ''}
+                    ${prompt.text ? `<div><strong>Text:</strong> "${prompt.text}"</div>` : ''}
+                </div>
+            `;
+            return div;
+        }
+
+        // Reload content every 5 minutes
+        loadContent();
+        setInterval(loadContent, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
