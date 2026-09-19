@@ -1,6 +1,20 @@
 {
   "description": "Tracks news headlines to prevent duplicates. Updated automatically by the automation.",
   "news_archive": {
+    "2026-09-19": [
+      {
+        "headline": "ECB's Lagarde Accused of Blocking Binance License",
+        "hash": "417addff46ebfd2d1976ef3f9d2a2bc090d990f859599416c10f13b90d8b04e7",
+        "posted_at": "2026-09-19T00:41:00Z",
+        "source": "Wall Street Journal / CoinDesk"
+      },
+      {
+        "headline": "CFTC Advances Crypto Rules After Clarity Act Stalls",
+        "hash": "f5f4db4cd79668ad401b73aae04cf2cc037c9dd0d1f72385b8064a04d86e49d7",
+        "posted_at": "2026-09-19T00:41:00Z",
+        "source": "CoinDesk / The Block"
+      }
+    ],
     "2026-09-18": [
       {
         "headline": "Bank of Japan Hikes Rates to 31-Year High",
