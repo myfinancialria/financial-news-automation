@@ -3,6 +3,18 @@
   "news_archive": {
     "2026-09-21": [
       {
+        "headline": "AMD Hits $1 Trillion, Nasdaq Jumps 2.2%",
+        "hash": "15f7bf96ba6ed30ce0e28967b7c8b6f97c34a1f03aef8a6f7207bcb877ef3361",
+        "posted_at": "2026-09-21T18:36:00Z",
+        "source": "Yahoo Finance"
+      },
+      {
+        "headline": "CFTC Probes Polymarket Over $10M Fraud",
+        "hash": "0201c3ef214799522fda78ebd0248ab8ef1e984f3e360284da9970ea27bd01cd",
+        "posted_at": "2026-09-21T18:36:00Z",
+        "source": "The Block / Wall Street Journal"
+      },
+      {
         "headline": "Bitcoin Surges to $85K, 8-Month High",
         "hash": "1a4ef4de3088f1d3815f9d6ad46b59664e0bc7b08fb02aaa4c38513a66bdd488",
         "posted_at": "2026-09-21T15:36:00Z",
