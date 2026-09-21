@@ -1,6 +1,20 @@
 {
   "description": "Tracks news headlines to prevent duplicates. Updated automatically by the automation.",
   "news_archive": {
+    "2026-09-21": [
+      {
+        "headline": "Telix Buys Germany's ITM Isotope for $1.65B",
+        "hash": "de15fac84033d308bcb03dbf5e783cc8dd09dfcf08f9c2e96ac5238981afab65",
+        "posted_at": "2026-09-20T23:48:00Z",
+        "source": "Investing.com / Reuters"
+      },
+      {
+        "headline": "Jefferies Sees S&P 500 Hitting 9,000 by 2027",
+        "hash": "421a0d3a06505d3d4df6c8a9903c65dd8878779a93e4b9b2679393d30eecbcf3",
+        "posted_at": "2026-09-20T22:03:00Z",
+        "source": "Investing.com"
+      }
+    ],
     "2026-09-20": [
       {
         "headline": "Kalshi Files for US Stock Perpetual Futures",
