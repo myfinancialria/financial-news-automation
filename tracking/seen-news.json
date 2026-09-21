@@ -3,6 +3,18 @@
   "news_archive": {
     "2026-09-21": [
       {
+        "headline": "Bitcoin Surges to $85K, 8-Month High",
+        "hash": "1a4ef4de3088f1d3815f9d6ad46b59664e0bc7b08fb02aaa4c38513a66bdd488",
+        "posted_at": "2026-09-21T15:36:00Z",
+        "source": "Yahoo Finance / CNBC"
+      },
+      {
+        "headline": "AMD, Intel Surge on AI Chip Price Hikes",
+        "hash": "ad89d5ac595541967b295e9f8e6aa8bee3a3927ea1b074697c47b3aff8388389",
+        "posted_at": "2026-09-21T15:36:00Z",
+        "source": "Investing.com / Yahoo Finance"
+      },
+      {
         "headline": "Greenland Stocks Soar on Trump Security Pact",
         "hash": "ed3aa0f6a8c5bfda19c67a6b9b896a147147d3c29c8339f298a130463287b4e2",
         "posted_at": "2026-09-21T12:37:00Z",
