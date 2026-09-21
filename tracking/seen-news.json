@@ -3,6 +3,18 @@
   "news_archive": {
     "2026-09-21": [
       {
+        "headline": "SoftBank Launches $10B+ Bond Sale for OpenAI Deal",
+        "hash": "98668ccf69d36e389529dc081d2454880fc4bc557de96c21bca181ead86b41",
+        "posted_at": "2026-09-21T03:10:00Z",
+        "source": "Reuters / Investing.com"
+      },
+      {
+        "headline": "Bessent Pitches US-China AI Safety Pact",
+        "hash": "3fd6c2101ce31fff77c2610635c8c01c27c43e5a0ccbfe2957356ba520b797e",
+        "posted_at": "2026-09-21T03:28:00Z",
+        "source": "CNN Business"
+      },
+      {
         "headline": "Telix Buys Germany's ITM Isotope for $1.65B",
         "hash": "de15fac84033d308bcb03dbf5e783cc8dd09dfcf08f9c2e96ac5238981afab65",
         "posted_at": "2026-09-20T23:48:00Z",
