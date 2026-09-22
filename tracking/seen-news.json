@@ -85,6 +85,18 @@
         "source": "CNN / NBC News / CBS News",
         "hash": "fc6671a70776d9fd72471bfdf11a405d4d418a7e449a5fc8df867434c44b1f89",
         "posted_at": "2026-09-22T18:44:00Z"
+      },
+      {
+        "headline": "Nasdaq Hits Record High as Oil Prices Sink",
+        "source": "CNBC / Yahoo Finance / TheStreet",
+        "hash": "e863212cae844b8ae1cc087cfd1ff980c2fce06a37a647409584a0d32ae017f1",
+        "posted_at": "2026-09-22T21:43:00Z"
+      },
+      {
+        "headline": "Royal Caribbean Nears $3B Stake in Sandals",
+        "source": "CNBC / Financial Times / Investing.com",
+        "hash": "93e9ceddfdc1cad6cae6abff8d1b46450c0909a5d53106c1a1934c4e0361ffbf",
+        "posted_at": "2026-09-22T21:43:00Z"
       }
     ],
     "2026-09-21": [
