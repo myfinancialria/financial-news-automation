@@ -3,6 +3,18 @@
   "news_archive": {
     "2026-09-25": [
       {
+        "headline": "Bitget Hacked for $352M, Suspects North Korea",
+        "hash": "e2a7c7e4c8ec49f9835ddb86e003cd19cf6e28a1ee7d96098b3fc1c6b2c0c3a2",
+        "posted_at": "2026-09-25T21:45:00Z",
+        "source": "CNBC / CoinDesk / Bitcoin Magazine"
+      },
+      {
+        "headline": "Dow Jumps 478 Points, Stocks Post Weekly Gains",
+        "hash": "84867db310dd0ed1614505044badf5f648dc2cea02c17f71b712e43e7e500c59",
+        "posted_at": "2026-09-25T21:45:00Z",
+        "source": "CNBC / Yahoo Finance"
+      },
+      {
         "headline": "30-Year Treasury Yield Hits 2004 High, Fed Bets Jump",
         "hash": "39664253998655ff4d3c667b05b0988491657331efc3cdb20a5f2228188de922",
         "posted_at": "2026-09-25T00:45:00Z",
