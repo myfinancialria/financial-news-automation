@@ -1,6 +1,20 @@
 {
   "description": "Tracks news headlines to prevent duplicates. Updated automatically by the automation.",
   "news_archive": {
+    "2026-09-25": [
+      {
+        "headline": "30-Year Treasury Yield Hits 2004 High, Fed Bets Jump",
+        "hash": "39664253998655ff4d3c667b05b0988491657331efc3cdb20a5f2228188de922",
+        "posted_at": "2026-09-25T00:45:00Z",
+        "source": "BigGo Finance / Kitco News / CNBC"
+      },
+      {
+        "headline": "Bitcoin Stalls Near $84K After $80M Liquidation Wave",
+        "hash": "86381f7f778d48510c7d09e07276b4e20f357bce5f1dc0e33577822959d52f99",
+        "posted_at": "2026-09-25T00:45:00Z",
+        "source": "Bitcoin.com News"
+      }
+    ],
     "2026-09-24": [
       {
         "headline": "US-China Trade Truce Extended to January 10",
