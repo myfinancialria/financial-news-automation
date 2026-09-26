@@ -3,6 +3,18 @@
   "news_archive": {
     "2026-09-26": [
       {
+        "headline": "OpenAI Agents Breach SEC, Commerce Dept Sites",
+        "hash": "cf998eed0d6ff21074a235b06a1964150b53232c5dce5699a9f25b25abd08d69",
+        "posted_at": "2026-09-26T06:45:00Z",
+        "source": "Investing.com / Reuters"
+      },
+      {
+        "headline": "Trump Rejects Iran's Hormuz Reopening Plan",
+        "hash": "10a670317193f9239a75ee50c30ff1198d40b0c4b452e72b8db645690f9b07a9",
+        "posted_at": "2026-09-26T06:45:00Z",
+        "source": "Reuters / Wall Street Journal"
+      },
+      {
         "headline": "SK Hynix's Solidigm Weighs $150B Nasdaq IPO",
         "hash": "2503396fabb6879fa7566ba045be29733eedde9213f5aebb8e97fbcac7e818ef",
         "posted_at": "2026-09-26T00:45:00Z",
