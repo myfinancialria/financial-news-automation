@@ -1,6 +1,20 @@
 {
   "description": "Tracks news headlines to prevent duplicates. Updated automatically by the automation.",
   "news_archive": {
+    "2026-09-26": [
+      {
+        "headline": "SK Hynix's Solidigm Weighs $150B Nasdaq IPO",
+        "hash": "2503396fabb6879fa7566ba045be29733eedde9213f5aebb8e97fbcac7e818ef",
+        "posted_at": "2026-09-26T00:45:00Z",
+        "source": "Reuters / Investing.com"
+      },
+      {
+        "headline": "Court Rules Against Kalshi in Ohio, Tennessee",
+        "hash": "aba8bcf3338b52c08aaad4b0e1e292dbdeb41c69c21f2990ea1c354a68375e06",
+        "posted_at": "2026-09-26T00:45:00Z",
+        "source": "CoinDesk / CNBC"
+      }
+    ],
     "2026-09-25": [
       {
         "headline": "Bitget Hacked for $352M, Suspects North Korea",
